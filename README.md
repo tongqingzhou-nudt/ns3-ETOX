@@ -1,7 +1,7 @@
 ns3-ETOX
 ========
 
-A coding-aware routing protocol for multi-hop wireless networks implemented in ns-3
+A coding-aware routing protocol for multi-hop wireless networks implemented in ns-3. The ETOX paper will be presented at MASS 2013 in October 2013 in Hangzhou, China.
 
 Installation
 ------------
