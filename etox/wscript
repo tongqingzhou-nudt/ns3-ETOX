@@ -17,12 +17,12 @@ def build(bld):
         'helper/link-state-helper.cc',
         ]
 
-    module_test = bld.create_ns3_module_test_library('etox')
-    module_test.source = [
-        'test/etox-test-suite.cc',
-        ]
+    #module_test = bld.create_ns3_module_test_library('etox')
+    #module_test.source = [
+    #    'test/etox-test-suite.cc',
+    #    ]
 
-    headers = bld.new_task_gen(features=['ns3header'])
+    headers = bld(features='ns3header')
     headers.module = 'etox'
     headers.source = [
 		'model/link-state-repo.h',
@@ -34,8 +34,8 @@ def build(bld):
 		'helper/link-state-helper.h',
         ]
 
-    if bld.env.ENABLE_EXAMPLES:
-        bld.add_subdirs('examples')
+    #if bld.env.ENABLE_EXAMPLES:
+    #    bld.recurse('examples')
 
     # bld.ns3_python_bindings()
 

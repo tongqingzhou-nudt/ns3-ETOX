@@ -1,0 +1,49 @@
+# -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+
+# def options(opt):
+#     pass
+
+# def configure(conf):
+#     conf.check_nonfatal(header_name='stdint.h', define_name='HAVE_STDINT_H')
+
+def build(bld):
+    module = bld.create_ns3_module('mync', ['network', 'internet'])
+    module.source = [
+		'model/mync-header.cc',
+		'model/mync-codenum.cc',
+		'model/mync-hash.cc',
+		'model/mync-neighbor.cc',
+		'model/mync-queue.cc',
+		'model/mync-packet-info.cc',
+		'model/mync-protocol.cc',
+		'model/mync-packet-pool.cc',
+		'model/mync-device.cc',
+		'helper/mync-helper.cc',
+        ]
+
+    #module_test = bld.create_ns3_module_test_library('mync')
+    #module_test.source = [
+    #    'test/mync-test-suite.cc',
+    #    ]
+
+    headers = bld(features='ns3header')
+    headers.module = 'mync'
+    headers.source = [
+		'model/mync-repo.h',
+		'model/mync-codenum.h',
+		'model/mync-header.h',
+		'model/mync-hash.h',
+		'model/mync-neighbor.h',
+		'model/mync-queue.h',
+		'model/mync-packet-info.h',
+		'model/mync-protocol.h',
+		'model/mync-packet-pool.h',
+		'model/mync-device.h',
+		'helper/mync-helper.h',
+        ]
+
+    #if bld.env.ENABLE_EXAMPLES:
+    #    bld.add_subdirs('examples')
+
+    # bld.ns3_python_bindings()
+
