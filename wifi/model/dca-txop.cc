@@ -287,7 +287,7 @@ DcaTxop::StartAccessIfNeeded (void)
 Ptr<MacLow>
 DcaTxop::GetLow() const
 {
-	return Low();
+	return m_low;
 }
 
 Ptr<MacLow>
