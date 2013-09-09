@@ -10,13 +10,10 @@ You will need ns-3.17. Not other versions of ns-3.
 
 To install:
 
-cd etox
-
-cp -rf wifi TxRatio etox mync YOUR_NS_DIR/src/ 
-
-cd YOUR_NS_DIR
-
-./waf clean & ./waf configure -d debug
+	cd etox
+	cp -rf wifi TxRatio etox mync YOUR_NS_DIR/src/ 
+	cd YOUR_NS_DIR
+	./waf clean & ./waf configure -d debug
 
 For now, please do noe enable tests. Otherwise you may run into problem when ns-3 compiling the wifi code.
 
